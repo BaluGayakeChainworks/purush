@@ -1,0 +1,244 @@
+diff --git a/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build.gradle b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build.gradle
+index 362db0b..78d97df 100644
+--- a/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build.gradle
++++ b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build.gradle
+@@ -5,6 +5,7 @@ def safeExtGet(prop, fallback) {
+ }
+ 
+ android {
++    namespace "com.mapbox.rctmgl"
+     compileSdkVersion safeExtGet("compileSdkVersion", 28)
+     buildToolsVersion safeExtGet("buildToolsVersion", '28.0.3')
+ 
+diff --git a/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/aapt_friendly_merged_manifests/debug/processDebugManifest/aapt/AndroidManifest.xml b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/aapt_friendly_merged_manifests/debug/processDebugManifest/aapt/AndroidManifest.xml
+new file mode 100644
+index 0000000..cda5a52
+--- /dev/null
++++ b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/aapt_friendly_merged_manifests/debug/processDebugManifest/aapt/AndroidManifest.xml
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="utf-8"?>
++<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++    package="com.mapbox.rctmgl" >
++
++    <uses-sdk android:minSdkVersion="24" />
++
++    <uses-permission android:name="android.permission.INTERNET" />
++    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
++
++</manifest>
+\ No newline at end of file
+diff --git a/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/aapt_friendly_merged_manifests/debug/processDebugManifest/aapt/output-metadata.json b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/aapt_friendly_merged_manifests/debug/processDebugManifest/aapt/output-metadata.json
+new file mode 100644
+index 0000000..67b2315
+--- /dev/null
++++ b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/aapt_friendly_merged_manifests/debug/processDebugManifest/aapt/output-metadata.json
+@@ -0,0 +1,18 @@
++{
++  "version": 3,
++  "artifactType": {
++    "type": "AAPT_FRIENDLY_MERGED_MANIFESTS",
++    "kind": "Directory"
++  },
++  "applicationId": "com.mapbox.rctmgl",
++  "variantName": "debug",
++  "elements": [
++    {
++      "type": "SINGLE",
++      "filters": [],
++      "attributes": [],
++      "outputFile": "AndroidManifest.xml"
++    }
++  ],
++  "elementType": "File"
++}
+\ No newline at end of file
+diff --git a/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/aar_metadata/debug/writeDebugAarMetadata/aar-metadata.properties b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/aar_metadata/debug/writeDebugAarMetadata/aar-metadata.properties
+new file mode 100644
+index 0000000..1211b1e
+--- /dev/null
++++ b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/aar_metadata/debug/writeDebugAarMetadata/aar-metadata.properties
+@@ -0,0 +1,6 @@
++aarFormatVersion=1.0
++aarMetadataVersion=1.0
++minCompileSdk=1
++minCompileSdkExtension=0
++minAndroidGradlePluginVersion=1.0.0
++coreLibraryDesugaringEnabled=false
+diff --git a/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties
+new file mode 100644
+index 0000000..450c415
+--- /dev/null
++++ b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties
+@@ -0,0 +1,5 @@
++#Tue Nov 26 14:41:44 IST 2024
++com.mapbox.rctmgl.react-native-mapbox-gl_maps-main-6\:/drawable/empty_drawable.png=/home/purush/Desktop/SinhagadApp/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/packaged_res/debug/packageDebugResources/drawable/empty_drawable.png
++com.mapbox.rctmgl.react-native-mapbox-gl_maps-main-6\:/drawable/empty.xml=/home/purush/Desktop/SinhagadApp/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/packaged_res/debug/packageDebugResources/drawable/empty.xml
++com.mapbox.rctmgl.react-native-mapbox-gl_maps-main-6\:/drawable-xxhdpi/red_marker.png=/home/purush/Desktop/SinhagadApp/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/packaged_res/debug/packageDebugResources/drawable-xxhdpi-v4/red_marker.png
++com.mapbox.rctmgl.react-native-mapbox-gl_maps-main-6\:/layout/annotation.xml=/home/purush/Desktop/SinhagadApp/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/packaged_res/debug/packageDebugResources/layout/annotation.xml
+diff --git a/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/incremental/debug/packageDebugResources/merged.dir/values/values.xml b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/incremental/debug/packageDebugResources/merged.dir/values/values.xml
+new file mode 100644
+index 0000000..1b0b5d6
+--- /dev/null
++++ b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/incremental/debug/packageDebugResources/merged.dir/values/values.xml
+@@ -0,0 +1,4 @@
++<?xml version="1.0" encoding="utf-8"?>
++<resources>
++    <string name="app_name">RCTMGL</string>
++</resources>
+\ No newline at end of file
+diff --git a/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/incremental/debug/packageDebugResources/merger.xml b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/incremental/debug/packageDebugResources/merger.xml
+new file mode 100644
+index 0000000..6f8bec3
+--- /dev/null
++++ b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/incremental/debug/packageDebugResources/merger.xml
+@@ -0,0 +1,2 @@
++<?xml version="1.0" encoding="utf-8"?>
++<merger version="3"><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/home/purush/Desktop/SinhagadApp/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/src/main/res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main" generated-set="main$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/home/purush/Desktop/SinhagadApp/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/src/main/res"><file name="red_marker" path="/home/purush/Desktop/SinhagadApp/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/src/main/res/drawable-xxhdpi/red_marker.png" qualifiers="xxhdpi-v4" type="drawable"/><file name="annotation" path="/home/purush/Desktop/SinhagadApp/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/src/main/res/layout/annotation.xml" qualifiers="" type="layout"/><file name="empty" path="/home/purush/Desktop/SinhagadApp/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/src/main/res/drawable/empty.xml" qualifiers="" type="drawable"/><file name="empty_drawable" path="/home/purush/Desktop/SinhagadApp/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/src/main/res/drawable/empty_drawable.png" qualifiers="" type="drawable"/><file path="/home/purush/Desktop/SinhagadApp/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/src/main/res/values/strings.xml" qualifiers=""><string name="app_name">RCTMGL</string></file></source></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/home/purush/Desktop/SinhagadApp/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/src/debug/res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/home/purush/Desktop/SinhagadApp/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/src/debug/res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/home/purush/Desktop/SinhagadApp/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/generated/res/resValues/debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated" generated-set="generated$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/home/purush/Desktop/SinhagadApp/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/generated/res/resValues/debug"/></dataSet><mergedItems/></merger>
+\ No newline at end of file
+diff --git a/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/manifest_merge_blame_file/debug/processDebugManifest/manifest-merger-blame-debug-report.txt b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/manifest_merge_blame_file/debug/processDebugManifest/manifest-merger-blame-debug-report.txt
+new file mode 100644
+index 0000000..49d4f76
+--- /dev/null
++++ b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/manifest_merge_blame_file/debug/processDebugManifest/manifest-merger-blame-debug-report.txt
+@@ -0,0 +1,14 @@
++1<?xml version="1.0" encoding="utf-8"?>
++2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++3    package="com.mapbox.rctmgl" >
++4
++5    <uses-sdk android:minSdkVersion="24" />
++6
++7    <uses-permission android:name="android.permission.INTERNET" />
++7-->/home/purush/Desktop/SinhagadApp/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/src/main/AndroidManifest.xml:2:5-67
++7-->/home/purush/Desktop/SinhagadApp/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/src/main/AndroidManifest.xml:2:22-64
++8    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
++8-->/home/purush/Desktop/SinhagadApp/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/src/main/AndroidManifest.xml:3:5-78
++8-->/home/purush/Desktop/SinhagadApp/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/src/main/AndroidManifest.xml:3:22-76
++9
++10</manifest>
+diff --git a/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml
+new file mode 100644
+index 0000000..cda5a52
+--- /dev/null
++++ b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="utf-8"?>
++<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++    package="com.mapbox.rctmgl" >
++
++    <uses-sdk android:minSdkVersion="24" />
++
++    <uses-permission android:name="android.permission.INTERNET" />
++    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
++
++</manifest>
+\ No newline at end of file
+diff --git a/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/navigation_json/debug/extractDeepLinksDebug/navigation.json b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/navigation_json/debug/extractDeepLinksDebug/navigation.json
+new file mode 100644
+index 0000000..0637a08
+--- /dev/null
++++ b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/navigation_json/debug/extractDeepLinksDebug/navigation.json
+@@ -0,0 +1 @@
++[]
+\ No newline at end of file
+diff --git a/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/nested_resources_validation_report/debug/generateDebugResources/nestedResourcesValidationReport.txt b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/nested_resources_validation_report/debug/generateDebugResources/nestedResourcesValidationReport.txt
+new file mode 100644
+index 0000000..08f4ebe
+--- /dev/null
++++ b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/nested_resources_validation_report/debug/generateDebugResources/nestedResourcesValidationReport.txt
+@@ -0,0 +1 @@
++0 Warning/Error
+\ No newline at end of file
+diff --git a/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/packaged_res/debug/packageDebugResources/drawable-xxhdpi-v4/red_marker.png b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/packaged_res/debug/packageDebugResources/drawable-xxhdpi-v4/red_marker.png
+new file mode 100644
+index 0000000..be782e1
+Binary files /dev/null and b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/packaged_res/debug/packageDebugResources/drawable-xxhdpi-v4/red_marker.png differ
+diff --git a/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/packaged_res/debug/packageDebugResources/drawable/empty.xml b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/packaged_res/debug/packageDebugResources/drawable/empty.xml
+new file mode 100644
+index 0000000..1f83bff
+--- /dev/null
++++ b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/packaged_res/debug/packageDebugResources/drawable/empty.xml
+@@ -0,0 +1,5 @@
++<?xml version="1.0" encoding="utf-8"?>
++<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
++  <size android:height="1dp" android:width="1dp" />
++  <solid android:color="@android:color/transparent" />
++</shape>
+diff --git a/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/packaged_res/debug/packageDebugResources/drawable/empty_drawable.png b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/packaged_res/debug/packageDebugResources/drawable/empty_drawable.png
+new file mode 100644
+index 0000000..9da19ea
+Binary files /dev/null and b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/packaged_res/debug/packageDebugResources/drawable/empty_drawable.png differ
+diff --git a/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/packaged_res/debug/packageDebugResources/layout/annotation.xml b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/packaged_res/debug/packageDebugResources/layout/annotation.xml
+new file mode 100644
+index 0000000..4994bd0
+--- /dev/null
++++ b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/packaged_res/debug/packageDebugResources/layout/annotation.xml
+@@ -0,0 +1,17 @@
++<?xml version="1.0" encoding="utf-8"?>
++<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:id="@+id/annotation_layout"
++    android:layout_width="wrap_content"
++    android:layout_height="wrap_content">
++
++    <ImageView
++        android:id="@+id/annotation_img"
++        android:layout_width="match_parent"
++        android:layout_height="match_parent" />
++
++    <LinearLayout
++        android:orientation="vertical"
++        android:id="@+id/annotation_view_container"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content" />
++</RelativeLayout>
+diff --git a/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/packaged_res/debug/packageDebugResources/values/values.xml b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/packaged_res/debug/packageDebugResources/values/values.xml
+new file mode 100644
+index 0000000..1b0b5d6
+--- /dev/null
++++ b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/intermediates/packaged_res/debug/packageDebugResources/values/values.xml
+@@ -0,0 +1,4 @@
++<?xml version="1.0" encoding="utf-8"?>
++<resources>
++    <string name="app_name">RCTMGL</string>
++</resources>
+\ No newline at end of file
+diff --git a/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/outputs/logs/manifest-merger-debug-report.txt b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/outputs/logs/manifest-merger-debug-report.txt
+new file mode 100644
+index 0000000..45f2c07
+--- /dev/null
++++ b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/build/outputs/logs/manifest-merger-debug-report.txt
+@@ -0,0 +1,25 @@
++-- Merging decision tree log ---
++manifest
++ADDED from /home/purush/Desktop/SinhagadApp/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/src/main/AndroidManifest.xml:1:1-4:12
++INJECTED from /home/purush/Desktop/SinhagadApp/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/src/main/AndroidManifest.xml:1:1-4:12
++	package
++		ADDED from /home/purush/Desktop/SinhagadApp/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/src/main/AndroidManifest.xml:1:70-97
++		INJECTED from /home/purush/Desktop/SinhagadApp/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/src/main/AndroidManifest.xml
++	xmlns:android
++		ADDED from /home/purush/Desktop/SinhagadApp/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/src/main/AndroidManifest.xml:1:11-69
++uses-permission#android.permission.INTERNET
++ADDED from /home/purush/Desktop/SinhagadApp/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/src/main/AndroidManifest.xml:2:5-67
++	android:name
++		ADDED from /home/purush/Desktop/SinhagadApp/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/src/main/AndroidManifest.xml:2:22-64
++uses-permission#android.permission.ACCESS_FINE_LOCATION
++ADDED from /home/purush/Desktop/SinhagadApp/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/src/main/AndroidManifest.xml:3:5-78
++	android:name
++		ADDED from /home/purush/Desktop/SinhagadApp/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/src/main/AndroidManifest.xml:3:22-76
++uses-sdk
++INJECTED from /home/purush/Desktop/SinhagadApp/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/src/main/AndroidManifest.xml reason: use-sdk injection requested
++INJECTED from /home/purush/Desktop/SinhagadApp/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/src/main/AndroidManifest.xml
++INJECTED from /home/purush/Desktop/SinhagadApp/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/src/main/AndroidManifest.xml
++	android:targetSdkVersion
++		INJECTED from /home/purush/Desktop/SinhagadApp/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/src/main/AndroidManifest.xml
++	android:minSdkVersion
++		INJECTED from /home/purush/Desktop/SinhagadApp/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/src/main/AndroidManifest.xml
+diff --git a/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/src/main/AndroidManifest.xml b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/src/main/AndroidManifest.xml
+index cdc05e1..e550688 100644
+--- a/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/src/main/AndroidManifest.xml
++++ b/node_modules/@react-native-mapbox-gl/maps/android/rctmgl/src/main/AndroidManifest.xml
+@@ -1,4 +1,4 @@
+-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.mapbox.rctmgl">
++<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+     <uses-permission android:name="android.permission.INTERNET" />
+     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+ </manifest>

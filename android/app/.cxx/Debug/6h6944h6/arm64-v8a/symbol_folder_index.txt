@@ -1,0 +1,1 @@
+/home/purush/Desktop/SinhagadApp/android/app/build/intermediates/cxx/Debug/6h6944h6/obj/arm64-v8a

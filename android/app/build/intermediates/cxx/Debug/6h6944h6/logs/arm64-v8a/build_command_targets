@@ -1,0 +1,7 @@
+/home/purush/Android/Sdk/cmake/3.22.1/bin/ninja \
+  -C \
+  /home/purush/Desktop/SinhagadApp/android/app/.cxx/Debug/6h6944h6/arm64-v8a \
+  appmodules \
+  react_codegen_rnpicker \
+  react_codegen_rnscreens \
+  react_codegen_safeareacontext

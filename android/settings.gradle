@@ -1,0 +1,24 @@
+pluginManagement { includeBuild("../node_modules/@react-native/gradle-plugin") }
+plugins { id("com.facebook.react.settings") }
+extensions.configure(com.facebook.react.ReactSettingsExtension){ ex -> ex.autolinkLibrariesFromCommand() }
+rootProject.name = 'SinhagadApp'
+include ':app'
+includeBuild('../node_modules/@react-native/gradle-plugin')
+dependencyResolutionManagement {
+  repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+  repositories {
+    google()
+    mavenCentral()
+    jcenter() // Warning: this repository is going to shut down soon
+    maven {
+        url 'https://api.mapbox.com/downloads/v2/releases/maven'
+        authentication {
+            basic(BasicAuthentication)
+        }
+         credentials {
+                username = 'mapbox'
+                password = 'sk.eyJ1IjoicHVydXNoMTgiLCJhIjoiY20ybHZsc2ZjMGY3ZDJwczdnbW4zcjk4cCJ9.sl5UstfyIMtF6G3D8e7wvw'
+            }
+    }
+  }
+}
